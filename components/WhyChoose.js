@@ -20,12 +20,12 @@ export default function WhyChooseSection() {
       <div className="content-container relative z-10">
         <h2
           id="why-choose-heading"
-          className="text-2xl md:text-3xl lg:text-4xl font-semibold text-black text-center mb-6 lg:mb-10 leading-tight"
+          className="heading text-2xl md:text-3xl lg:text-4xl font-semibold text-black text-center mb-6 lg:mb-10 leading-tight"
         >
           Why choose Amino Club?
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+        <div className="paragraph grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
           {/* Card */}
           {[
             {

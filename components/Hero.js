@@ -24,17 +24,17 @@ export default function Hero() {
 
           {/* LEFT TEXT */}
           <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-2 lg:gap-4 pt-4 pb-8 lg:py-8 xl:py-10 z-20 order-2 lg:order-1">
-            <h1 className="text-[2.75rem] sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-[4rem] font-semibold leading-[1.05] tracking-tight max-w-md lg:max-w-lg">
+            <h1 className="font-anek text-[2.75rem] sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-[4rem] font-semibold leading-[1.05] tracking-tight max-w-md lg:max-w-lg">
               Sign Up for Full Access
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl text-black/80 leading-relaxed max-w-sm lg:max-w-md">
+            <p className="font-anek leading-tight text-base sm:text-lg md:text-xl lg:text-lg xl:text-xl text-black/80 max-w-sm lg:max-w-md">
               Create an account or sign in to explore our complete catalog of
               research-grade peptides with 99%+ purity.
             </p>
 
             <div className="pt-2 lg:pt-3">
-              <button className="group bg-black hover:bg-black/90 text-white text-sm lg:text-base h-11 lg:h-12 px-6 lg:px-8 rounded-full transition-all inline-flex items-center gap-3">
+              <button className="font-poppins group bg-black hover:bg-black/90 text-white text-sm lg:text-base h-11 lg:h-12 px-6 lg:px-8 rounded-full transition-all inline-flex items-center gap-3">
                 Get Started
                 <span className="transition-transform group-hover:translate-x-1">
                   →

@@ -23,18 +23,18 @@ export default function UnlockAccess() {
                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
               />
             </svg>
-            <span className="text-sm font-medium text-black/70 pt-[4.5px]">
+            <span className="font-anek text-sm font-medium text-black/70 pt-[4.5px]">
               Members Only
             </span>
           </div>
 
           {/* TITLE */}
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-black leading-tight mb-4">
+          <h2 className="font-anek text-2xl md:text-3xl lg:text-4xl font-semibold text-black leading-tight mb-4">
             Unlock Full Access to Our Store
           </h2>
 
           {/* DESCRIPTION */}
-          <p className="text-base md:text-lg text-black/70 leading-relaxed mb-8 max-w-2xl mx-auto">
+          <p className="font-anek leading-none text-base md:text-lg text-black/70 leading-relaxed mb-8 max-w-2xl mx-auto">
             Sign in or create an account to browse our complete catalog of
             research-grade peptides, access exclusive member pricing, and join
             our community of researchers.

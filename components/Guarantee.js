@@ -24,17 +24,17 @@ export default function GuaranteeSection() {
 
           {/* HEADER */}
           <header className="mb-4 md:mb-5 lg:mb-8 lg:pl-14">
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold leading-[1.05] mb-2">
+            <h2 className="font-anektext-xl md:text-2xl lg:text-3xl font-semibold leading-[1.05] mb-2">
               The Amino Club Guarantee
             </h2>
-            <p className="text-sm md:text-base lg:text-lg text-[#555] max-w-[420px]">
+            <p className="font-anek text-sm md:text-base lg:text-lg text-[#555] max-w-[420px]">
               We don't compromise on quality. Every product meets the highest
               standards.
             </p>
           </header>
 
           {/* GUARANTEE ITEMS */}
-          <div className="flex flex-col gap-2 md:gap-2.5 lg:gap-3 lg:-ml-[24px]">
+          <div className="font-anek flex flex-col gap-2 md:gap-2.5 lg:gap-3 lg:-ml-[24px]">
 
             {/* ITEM 1 */}
             <GuaranteeItem

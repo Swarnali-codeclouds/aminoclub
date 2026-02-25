@@ -11,17 +11,17 @@ export default function Quality() {
 
       {/* LEFT CONTENT */}
       <div className="order-2 lg:order-1">
-        <h2 className="text-2xl md:text-3xl lg:text-[40px] font-semibold leading-tight mb-4">
+        <h2 className="heading text-2xl md:text-3xl lg:text-[40px] font-semibold leading-tight mb-4">
           Quality you can verify, not just trust
         </h2>
 
-        <p className="text-sm md:text-base lg:text-lg text-[#666] mb-6">
+        <p className="paragraph text-sm md:text-base lg:text-lg text-[#666] mb-6">
           Every batch is independently tested by accredited U.S. laboratories.
           We don’t ask you to take our word for it—we give you the proof.
         </p>
 
         {/* STATS */}
-        <div className="flex flex-wrap gap-6 pb-6 mb-6 border-b border-[#eee]">
+        <div className="heading flex flex-wrap gap-6 pb-6 mb-6 border-b border-[#eee]">
           {[
             ["99%+", "Purity Guaranteed"],
             ["5", "Quality Checks"],

@@ -7,22 +7,22 @@ export default function Features() {
   aria-label="Features"
 >
   <div className="content-container">
-    <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-black leading-[1.05] text-center mb-8 lg:mb-12">
+    <h2 className="font-anek text-2xl md:text-3xl lg:text-4xl font-semibold text-black leading-[1.05] text-center mb-8 lg:mb-12">
       Everything you need to succeed
     </h2>
 
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5">
       
       {/* Card 1 */}
-      <div className="lg:col-span-6 bg-white rounded-2xl lg:rounded-[28px] shadow-[0px_4px_12.5px_rgba(151,201,143,0.44)] p-5 lg:p-6 min-h-[180px] lg:min-h-[220px] relative overflow-hidden">
-        <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold leading-[1.1] mb-2">
+      <div className="font-anek lg:col-span-6 bg-white rounded-2xl lg:rounded-[28px] shadow-[0px_4px_12.5px_rgba(151,201,143,0.44)] p-5 lg:p-6 min-h-[180px] lg:min-h-[220px] relative overflow-hidden">
+        <h3 className="font-anek text-lg lg:text-xl xl:text-2xl font-semibold leading-[1.1] mb-2">
           Join a community of researchers
         </h3>
         <p className="text-sm lg:text-base mb-4 max-w-[70%]">
           Every purchase unlocks access to our private Discord community. Connect with fellow peptide enthusiasts, share insights, and get real-time support.
         </p>
         <a href="/us/store" className="inline-block">
-          <button className="border border-black text-black text-sm lg:text-base font-medium px-5 lg:px-6 h-10 lg:h-11 rounded-full hover:bg-black hover:text-white transition">
+          <button className="font-poppins border border-black text-black text-sm lg:text-base font-medium px-5 lg:px-6 h-10 lg:h-11 rounded-full hover:bg-black hover:text-white transition">
             Shop & Join Community
           </button>
         </a>
@@ -34,7 +34,7 @@ export default function Features() {
       </div>
 
       {/* Card 2 */}
-      <div className="lg:col-span-6 bg-white rounded-2xl lg:rounded-[28px] shadow-[0px_4px_12.5px_rgba(151,201,143,0.44)] p-5 lg:p-6 min-h-[180px] lg:min-h-[220px] relative overflow-hidden">
+      <div className="font-anek lg:col-span-6 bg-white rounded-2xl lg:rounded-[28px] shadow-[0px_4px_12.5px_rgba(151,201,143,0.44)] p-5 lg:p-6 min-h-[180px] lg:min-h-[220px] relative overflow-hidden">
         <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold leading-[1.1] mb-2">
           Lab-grade quality meets research-friendly pricing
         </h3>
@@ -42,7 +42,7 @@ export default function Features() {
           GMP-compliant sourcing with rigorous third-party testing—ensuring the highest purity peptides remain accessible.
         </p>
         <a href="/us/store" className="inline-block">
-          <button className="border border-black text-black text-sm lg:text-base font-medium px-5 lg:px-6 h-10 lg:h-11 rounded-full hover:bg-black hover:text-white transition">
+          <button className="font-poppins border border-black text-black text-sm lg:text-base font-medium px-5 lg:px-6 h-10 lg:h-11 rounded-full hover:bg-black hover:text-white transition">
             Shop USA Tested Peptides
           </button>
         </a>
@@ -54,7 +54,7 @@ export default function Features() {
       </div>
 
       {/* Card 3 */}
-      <div className="lg:col-span-6 bg-white rounded-2xl lg:rounded-[28px] shadow-[0px_4px_12.5px_rgba(151,201,143,0.44)] p-5 lg:p-6 min-h-[120px] flex items-center relative overflow-hidden">
+      <div className="font-anek lg:col-span-6 bg-white rounded-2xl lg:rounded-[28px] shadow-[0px_4px_12.5px_rgba(151,201,143,0.44)] p-5 lg:p-6 min-h-[120px] flex items-center relative overflow-hidden">
         <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold max-w-[70%]">
           Expert support whenever you need it
         </h3>
@@ -66,7 +66,7 @@ export default function Features() {
       </div>
 
       {/* Tall card */}
-      <div className="lg:col-span-6 lg:row-span-2 bg-white rounded-2xl lg:rounded-[28px] shadow-[0px_4px_12.5px_rgba(151,201,143,0.44)] p-5 lg:p-6 min-h-[300px] relative overflow-hidden">
+      <div className="font-anek lg:col-span-6 lg:row-span-2 bg-white rounded-2xl lg:rounded-[28px] shadow-[0px_4px_12.5px_rgba(151,201,143,0.44)] p-5 lg:p-6 min-h-[300px] relative overflow-hidden">
         <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold mb-2">
           Extensive research library at your fingertips
         </h3>
@@ -74,7 +74,7 @@ export default function Features() {
           Access research articles, studies, and educational resources updated regularly.
         </p>
         <a href="/us/research">
-          <button className="border border-black text-black text-sm lg:text-base font-medium px-5 lg:px-6 h-10 lg:h-11 rounded-full hover:bg-black hover:text-white transition">
+          <button className="font-poppins border border-black text-black text-sm lg:text-base font-medium px-5 lg:px-6 h-10 lg:h-11 rounded-full hover:bg-black hover:text-white transition">
             Explore Research Library
           </button>
         </a>
@@ -86,7 +86,7 @@ export default function Features() {
       </div>
 
       {/* Shipping */}
-      <div className="lg:col-span-6 bg-white rounded-2xl lg:rounded-[28px] shadow-[0px_4px_12.5px_rgba(151,201,143,0.44)] p-5 lg:p-6 min-h-[120px] flex items-center relative overflow-hidden">
+      <div className="font-anek lg:col-span-6 bg-white rounded-2xl lg:rounded-[28px] shadow-[0px_4px_12.5px_rgba(151,201,143,0.44)] p-5 lg:p-6 min-h-[120px] flex items-center relative overflow-hidden">
         <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold max-w-[70%]">
           Anywhere in the US, as fast as next day
         </h3>
@@ -98,14 +98,14 @@ export default function Features() {
       </div>
 
       {/* Guarantee */}
-<div className="relative lg:col-span-12 bg-white rounded-2xl lg:rounded-[28px]
+<div className="font-anek relative lg:col-span-12 bg-white rounded-2xl lg:rounded-[28px]
 shadow-[0px_4px_12.5px_rgba(151,201,143,0.44)]
 p-6 lg:p-8 pr-24 lg:pr-32
 flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between
 overflow-hidden">
 
   {/* Left Content */}
-  <div className="max-w-3xl">
+  <div className="font-anek max-w-3xl">
     <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold mb-2 leading-tight">
       60-day money-back guarantee & free shipment protection
     </h3>
@@ -115,9 +115,9 @@ overflow-hidden">
   </div>
 
   {/* Right CTA */}
-  <div className="relative z-20 shrink-0">
+  <div className="font-anek relative z-20 shrink-0">
     <a href="/us/returns">
-      <button className="border border-black text-black text-sm lg:text-base font-medium
+      <button className="btn border border-black text-black text-sm lg:text-base font-medium
         px-6 lg:px-8 h-11 lg:h-12 rounded-full
         hover:bg-black hover:text-white transition-all bg-white">
         Shop With Confidence

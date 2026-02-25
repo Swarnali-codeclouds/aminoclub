@@ -10,7 +10,7 @@ export default function Header() {
   shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
   role="banner"
 >
-  
+
       {/* Gradient overlay */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white to-[#fafafc]"></div>
 
@@ -48,17 +48,17 @@ export default function Header() {
         </div>
 
         {/* Desktop navigation links */}
-        <div className="hidden lg:flex items-center gap-1">
-          <a href="/us/store" className="relative px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200">
+        <div className="hidden lg:flex items-center gap-1 ">
+          <a href="/us/store" className="relative font-poppins px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200">
             Products
           </a>
-          <a href="/us/research" className="relative px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200">
+          <a href="/us/research" className="relative font-poppins px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200">
             Research
           </a>
-          <a href="/us/affiliate" className="relative px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200">
+          <a href="/us/affiliate" className="relative font-poppins px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200">
             Partner Program
           </a>
-          <a href="/us/contact" className="relative px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200">
+          <a href="/us/contact" className="relative font-poppins px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200">
             Contact us
           </a>
         </div>

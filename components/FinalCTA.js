@@ -43,7 +43,7 @@ export default function CallToActionSection() {
         {/* Text Content */}
         <div className="content-container relative z-20">
           <div className="max-w-3xl mx-auto text-center px-8 sm:px-12 lg:px-16">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-black leading-[1.35] mb-6 lg:mb-8">
+            <h2 className="headingtext-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-black leading-[1.35] mb-6 lg:mb-8">
               All the research peptides you need, with the{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 transition-all duration-500 animate-text-glow">

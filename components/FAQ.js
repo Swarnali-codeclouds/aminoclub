@@ -84,11 +84,11 @@ export default function FAQ() {
         <div className="text-center mb-12">
           <h2
             id="faq-heading"
-            className="font-sans text-3xl md:text-4xl font-semibold text-black mb-4"
+            className="heading text-3xl md:text-4xl font-semibold text-black mb-4"
           >
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="paragraph text-lg text-gray-600 max-w-2xl mx-auto">
             Everything you need to know about peptide research
           </p>
         </div>
