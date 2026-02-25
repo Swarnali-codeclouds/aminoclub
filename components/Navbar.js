@@ -10,6 +10,7 @@ export default function Header() {
   shadow-[0_1px_3px_rgba(0,0,0,0.05)]"
   role="banner"
 >
+  
       {/* Gradient overlay */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-b from-white to-[#fafafc]"></div>
 
