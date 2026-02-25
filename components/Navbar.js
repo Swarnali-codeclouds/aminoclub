@@ -35,7 +35,7 @@ export default function Header() {
           <a
             className="flex items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 focus-visible:ring-offset-2 rounded-sm"
             aria-label="Amino Club home"
-            href="/us"
+            href="/"
           >
             <img
               src="/images/LogoMain.svg"
@@ -49,7 +49,7 @@ export default function Header() {
 
         {/* Desktop navigation links */}
         <div className="hidden lg:flex items-center gap-1 ">
-          <a href="/us/store" className="relative font-poppins px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200">
+          <a href="/store" className="relative font-poppins px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200">
             Products
           </a>
           <a href="/us/research" className="relative font-poppins px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200">
