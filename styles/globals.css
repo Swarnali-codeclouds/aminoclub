@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @theme {
   --font-anek: var(--font-anek);
   --font-poppins: var(--font-poppins);

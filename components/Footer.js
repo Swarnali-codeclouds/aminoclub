@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer
-      className="w-full bg-[#0a192f]"
+      className="w-full bg-[#0a192f] font-anek"
       role="contentinfo"
       aria-label="Site footer"
     >

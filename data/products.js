@@ -5,10 +5,45 @@ const products = [
     price: "29.99",
     subtitle: "Anti-Aging Compound",
     image: "/images/product-list/image1.png",
+    displayImage: "/images/product-list/image1.1.png",
     rating: 4.9,
     reviews: 256,
     category: "Recovery Research",
-  },
+     tags: [
+      "Nicotinamide Adenine Dinucleotide",
+      "Coenzyme I",
+      "Beta-NAD"
+    ],
+    description: "A naturally occurring copper tripeptide that promotes tissue remodeling, wound healing, and collagen synthesis in animal and in vitro studies. Premium Research Peptide.",
+    variants: [
+    { id: 1, dosage: "50MG", price: 29.99 },
+    { id: 2, dosage: "100MG", price: 49.99 },
+  ],
+  bundles: [
+    {
+      id: "single",
+      bottles: 1,
+      label: "1 BOTTLE",
+      price: 69.99,
+    },
+    {
+      id: "double",
+      bottles: 2,
+      label: "2 BOTTLES",
+      price: 135.36,
+      tag: "MOST POPULAR",
+      saving: 3.3,
+    },
+    {
+      id: "triple",
+      bottles: 3,
+      label: "3 BOTTLES",
+      price: 199.47,
+      tag: "BEST VALUE",
+      saving: 5,
+    },
+  ],
+},
   {
     slug: "nad-plus",
     name: "NAD+",
