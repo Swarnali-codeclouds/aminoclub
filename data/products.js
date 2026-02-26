@@ -10,35 +10,32 @@ const products = [
     reviews: 256,
     category: "Recovery Research",
      tags: [
-      "Nicotinamide Adenine Dinucleotide",
-      "Coenzyme I",
-      "Beta-NAD"
+      "Copper Tripeptide-1",
+      "Glycyl-L-histidyl-L-lysine Copper C",
+
     ],
     description: "A naturally occurring copper tripeptide that promotes tissue remodeling, wound healing, and collagen synthesis in animal and in vitro studies. Premium Research Peptide.",
     variants: [
     { id: 1, dosage: "50MG", price: 29.99 },
-    { id: 2, dosage: "100MG", price: 49.99 },
+    { id: 2, dosage: "100MG", price: 57.99 },
   ],
   bundles: [
     {
-      id: "single",
+      id: "ghk-one",
       bottles: 1,
       label: "1 BOTTLE",
-      price: 69.99,
     },
     {
-      id: "double",
+      id: "ghk-two",
       bottles: 2,
       label: "2 BOTTLES",
-      price: 135.36,
       tag: "MOST POPULAR",
       saving: 3.3,
     },
     {
-      id: "triple",
+      id: "ghk-three",
       bottles: 3,
       label: "3 BOTTLES",
-      price: 199.47,
       tag: "BEST VALUE",
       saving: 5,
     },
@@ -50,9 +47,41 @@ const products = [
     price: "69.99",
     subtitle: "Longevity Peptide",
     image: "/images/product-list/image2.png",
+    displayImage: "/images/product-list/image2.1.png",
     rating: 4.8,
     reviews: 238,
     category: "Skin & Anti-Aging Research",
+    tags: [
+      "Nicotinamide Adenine Dinucleotide",
+      "Coenzyme I",
+      "Beta-NAD"
+    ],
+    description: "A naturally occurring copper tripeptide that promotes tissue remodeling, wound healing, and collagen synthesis in animal and in vitro studies. Premium Research Peptide.",
+    variants: [
+    { id: 1, dosage: "50MG", price: 29.99 },
+    { id: 2, dosage: "100MG", price: 57.99 },
+  ],
+  bundles: [
+    {
+      id: "nad-one",
+      bottles: 1,
+      label: "1 BOTTLE",
+    },
+    {
+      id: "nad-two",
+      bottles: 2,
+      label: "2 BOTTLES",
+      tag: "MOST POPULAR",
+      saving: 3.3,
+    },
+    {
+      id: "nad-three",
+      bottles: 3,
+      label: "3 BOTTLES",
+      tag: "BEST VALUE",
+      saving: 5,
+    },
+  ],
   },
    {
     slug: "glutathione",

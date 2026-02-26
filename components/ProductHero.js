@@ -1,6 +1,7 @@
 // components/ProductHero.js
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
+import PaymentMethods from "./PaymentMethods";
 
 export default function ProductHero({ product }) {
   const [quantity, setQuantity] = useState(1);
@@ -24,14 +25,22 @@ export default function ProductHero({ product }) {
   const decreaseQty = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   // NEW: price calculation
-  const finalPrice = (selectedBundle.price * quantity).toFixed(2);
+  const calculatePrice = () => {
+  const base = selectedVariant.price * selectedBundle.bottles * quantity;
+
+  if (!selectedBundle.saving) return base.toFixed(2);
+
+  return (base * (1 - selectedBundle.saving / 100)).toFixed(2);
+};
+
+const finalPrice = calculatePrice();
 
   return (
-    <div className="max-w-[1500px] mx-auto px-4 py-8 sm:py-4 lg:py-9 sm:px-6 lg:px-8">
+    <div className="max-w-[1500px] mx-auto px-4 py-8 sm:py-4 lg:py-9 sm:px-6 lg:px-8 font-anek">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-5">
         {/* Product Image */}
         <div
-          className="bg-[#eeeeee] border border-[#e8e8e8] rounded-[20px] lg:rounded-[24px] p-0 flex items-center justify-center overflow-hidden"
+          className="bg-[#eeeeee] border border-[#e8e8e8] rounded-[25px] lg:rounded-[24px] p-0 flex items-center justify-center overflow-hidden"
           style={{ minHeight: rightHeight || "300px" }}
         >
           <Image
@@ -83,7 +92,7 @@ export default function ProductHero({ product }) {
           </p>
 
           {/* Dosage, Quantity & Price */}
-          <div className="hidden lg:flex lg:items-center lg:gap-6 mb-6">
+          <div className="lg:flex lg:items-center lg:gap-6 mb-6">
             <div className="flex-1">
               {/* Dosage */}
               <div className="flex items-center mb-3">
@@ -137,16 +146,16 @@ export default function ProductHero({ product }) {
           {/* Bundle & Save */}
           <div className="mt-2">
             <h2 className="text-lg font-bold mb-3">Bundle & Save</h2>
-
-            <div className="flex gap-2 overflow-x-auto">
-              {product.bundles.map((bundle) => {
-                const isSelected = selectedBundle.id === bundle.id;
+            <div className="overflow-x-auto sm:overflow-visible pt-2">
+              <div className="flex gap-2 min-w-max sm:min-w-0">
+                {product.bundles.map((bundle) => {
+                  const isSelected = selectedBundle.id === bundle.id;
 
                 return (
                   <button
                     key={bundle.id}
                     onClick={() => setSelectedBundle(bundle)}
-                    className={`relative flex items-center gap-3 px-3 py-2 border rounded-lg transition-all flex-shrink-0
+                    className={`relative flex items-center gap-3 px-6 py-4 border rounded-lg transition-all flex-shrink-0
                       ${
                         isSelected
                           ? "border-black bg-gray-100"
@@ -155,9 +164,16 @@ export default function ProductHero({ product }) {
                   >
                     {/* Tag */}
                     {bundle.tag && (
-                      <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] px-2 py-0.5 rounded-full">
+                    <span
+                        className={`absolute -top-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full text-[10px] font-semibold text-white whitespace-nowrap z-10
+                        ${
+                            bundle.tag.toLowerCase() === "most popular"
+                            ? "bg-teal-600"
+                            : "bg-amber-500"
+                        }`}
+                    >
                         {bundle.tag}
-                      </span>
+                    </span>
                     )}
 
                     {/* Bottle Images */}
@@ -178,7 +194,7 @@ export default function ProductHero({ product }) {
 
                     {/* Text */}
                     <div className="text-left">
-                      <p className="text-xs font-medium">{bundle.name}</p>
+                      <p className="text-xs font-medium text-black">{bundle.label}</p>
                       {bundle.saving && (
                         <p className="text-[10px] font-bold text-green-600">
                           Save {bundle.saving}%
@@ -189,6 +205,7 @@ export default function ProductHero({ product }) {
                 );
               })}
             </div>
+          </div>
           </div>
           {/* CTA Buttons */}
           <div className="flex items-center gap-3 mt-auto pt-6">
@@ -296,19 +313,22 @@ export default function ProductHero({ product }) {
             </div>
           </div>
           {/* Klarna Pay Later */}
-            <div className="flex items-center gap-2 bg-[rgba(255,179,199,0.1)] border border-[#FFB3C7]/30 rounded-lg px-3 py-2.5 mt-4">
-            <img
-                src="/images/product-list/pink.svg"
-                alt="Klarna"
-                width={55}
-                height={24}
-                className="flex-shrink-0"
-            />
+          <div className="flex items-center gap-2 bg-[rgba(255,179,199,0.1)] border border-[#FFB3C7]/30 rounded-lg px-3 py-2.5 mt-4">
+  <img
+    src="/images/product-list/pink.svg"
+    alt="Klarna"
+    width={55}
+    height={24}
+    className="flex-shrink-0"
+  />
   <span className="text-sm text-[#333] leading-tight">
     4 interest-free payments of{" "}
-    <span className="font-semibold">$7.50</span>
+    <span className="font-semibold">
+      ${(finalPrice / 4).toFixed(2)}
+    </span>
   </span>
 </div>
+<PaymentMethods />
         </div>
       </div>
     </div>
