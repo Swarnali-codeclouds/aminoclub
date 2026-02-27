@@ -70,7 +70,7 @@ export default function Header() {
             />
           </a>
         </div>
-
+        
         {/* Desktop navigation links */}
         <div className="hidden lg:flex items-center gap-1 ">
           <a

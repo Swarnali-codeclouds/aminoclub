@@ -38,7 +38,7 @@ export default function AddToCartButton({
       onClick={handleAddToCart}
       className="flex-1 h-12 rounded-full bg-black text-white font-medium text-sm"
     >
-      Add to Cart →
+      Add to Cart
     </button>
   );
 }
