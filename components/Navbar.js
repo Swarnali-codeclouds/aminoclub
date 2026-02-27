@@ -163,7 +163,9 @@ export default function Header() {
         </div>
       </nav>
     </header>
-    <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
+        <div className="lg:hidden">
+        <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
+      </div>
     </>
   );
 }
