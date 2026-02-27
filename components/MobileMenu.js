@@ -1,87 +1,106 @@
 "use client";
 
-import { useEffect } from "react";
+import Link from "next/link";
 
 export default function MobileMenu({ open, onClose }) {
-  // lock body scroll
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
-    return () => (document.body.style.overflow = "");
-  }, [open]);
+  if (!open) return null;
 
   return (
-    <>
+    <div className="fixed inset-0 z-[60] lg:hidden">
       {/* Overlay */}
-      {open && (
-        <div
-          className="fixed inset-0 bg-black/40 z-40"
-          onClick={onClose}
-        />
-      )}
+      <div
+        className="absolute inset-0 bg-black/30 backdrop-blur-sm"
+        onClick={onClose}
+      />
 
       {/* Drawer */}
-      <div
-        className={`fixed inset-y-0 left-0 z-50 w-full max-w-[767px] bg-white
-        transform transition-transform duration-300 ease-out
-        ${open ? "translate-x-0" : "translate-x-full"}`}
-      >
+      <aside className="absolute left-0 top-0 h-full w-[100%] max-w-[700px] bg-white shadow-xl">
         {/* Header */}
-        <div className="flex items-center justify-between px-5 h-16 border-b">
-          <img
-            src="/images/LogoMain.svg"
-            alt="Amino Club"
-            className="h-7"
-          />
-          <button
-            onClick={onClose}
-            className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5"
-          >
+        <div className="flex items-center justify-between px-6 h-16 border-b">
+          <span className="text-lg font-semibold">Menu</span>
+          <button onClick={onClose} aria-label="Close menu">
             ✕
           </button>
         </div>
 
-        {/* Menu */}
-        <nav className="px-5 py-4 space-y-1">
-          {[
-            { label: "Products", href: "/store" },
-            { label: "Research", href: "/us/research" },
-            { label: "Partner Program", href: "/us/affiliate" },
-            { label: "Contact us", href: "/us/contact" },
-          ].map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="flex items-center justify-between py-3 text-[15px] font-medium text-black"
-              onClick={onClose}
-            >
-              {item.label}
-              <span className="text-gray-400">›</span>
-            </a>
-          ))}
-        </nav>
+        {/* Navigation */}
+        <nav className="flex-1 overflow-y-auto py-6">
+          {/* Primary links */}
+          <div className="px-4 space-y-1">
+            <MobileLink href="/store" label="Products" onClose={onClose} />
+            <MobileLink href="/research" label="Research" onClose={onClose} />
+            <MobileLink
+              href="/affiliate"
+              label="Partner Program"
+              onClose={onClose}
+            />
+            <MobileLink
+              href="/contact"
+              label="Contact us"
+              onClose={onClose}
+            />
+          </div>
 
-        {/* Divider */}
-        <div className="border-t mx-5 my-4" />
+          {/* Divider */}
+          <div className="my-6 mx-6 h-px bg-gradient-to-r from-transparent via-black/10 to-transparent" />
 
-        {/* Secondary */}
-        <nav className="px-5 space-y-1">
-          <a
-            href="/us/account"
-            className="flex items-center justify-between py-3 text-[15px] text-gray-500"
-            onClick={onClose}
-          >
-            Account
-            <span>›</span>
-          </a>
-          <button
-            onClick={onClose}
-            className="flex w-full items-center justify-between py-3 text-[15px] text-gray-500"
-          >
-            Cart
-            <span>›</span>
-          </button>
+          {/* Secondary links */}
+          <div className="px-4 space-y-1">
+            <MobileSubLink href="/account" label="Account" onClose={onClose} />
+            <MobileSubLink href="/cart" label="Cart" onClose={onClose} />
+          </div>
         </nav>
-      </div>
-    </>
+      </aside>
+    </div>
+  );
+}
+
+/* ---------- Reusable components ---------- */
+
+function ArrowIcon() {
+  return (
+    <svg
+      className="w-4 h-4 text-black/20 group-hover:text-black/30 group-hover:translate-x-0.5 transition-all"
+      viewBox="0 0 24 24"
+      fill="none"
+    >
+      <path
+        d="M9 18L15 12L9 6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function MobileLink({ href, label, onClose }) {
+  return (
+    <Link
+      href={href}
+      onClick={onClose}
+      className="group flex items-center justify-between h-14 px-5 text-[16px] font-medium
+                 text-black rounded-2xl hover:bg-gradient-to-r
+                 hover:from-gray-50 hover:to-gray-50/50 transition-all"
+    >
+      <span>{label}</span>
+      <ArrowIcon />
+    </Link>
+  );
+}
+
+function MobileSubLink({ href, label, onClose }) {
+  return (
+    <Link
+      href={href}
+      onClick={onClose}
+      className="group flex items-center justify-between h-12 px-5 text-[15px]
+                 font-medium text-black/50 hover:text-black/80 rounded-2xl
+                 hover:bg-gray-50/80 transition-all"
+    >
+      <span>{label}</span>
+      <ArrowIcon />
+    </Link>
   );
 }

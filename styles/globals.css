@@ -114,3 +114,13 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+/* Remove focus styles from inputs & selects */
+input:focus,
+input:focus-visible,
+select:focus,
+select:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}

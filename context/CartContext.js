@@ -28,14 +28,14 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{
-        cartOpen,
-        setCartOpen,
-        cartItems,
-        addToCart,
-        updateQty,      // ✅ MUST BE EXPORTED
-        removeFromCart,
-      }}
+        value={{
+    cartOpen,
+    setCartOpen,
+    cartItems,
+    addToCart,
+    removeFromCart,
+    updateQty, // ✅ REQUIRED
+  }}
     >
       {children}
     </CartContext.Provider>

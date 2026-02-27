@@ -80,19 +80,19 @@ export default function Header() {
             Products
           </a>
           <a
-            href="/us/research"
+            href="/research"
             className="relative font-poppins px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200"
           >
             Research
           </a>
           <a
-            href="/us/affiliate"
+            href="/affiliate"
             className="relative font-poppins px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200"
           >
             Partner Program
           </a>
           <a
-            href="/us/contact"
+            href="/contact"
             className="relative font-poppins px-4 py-2 text-[13px] font-medium text-black/75 hover:text-black rounded-full hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 transition-colors duration-200"
           >
             Contact us
@@ -103,7 +103,7 @@ export default function Header() {
         <div className="flex items-center gap-1 lg:gap-2">
           {/* Account */}
           <a
-            href="/us/account"
+            href="/account"
             className="hidden sm:flex items-center justify-center w-10 h-10 text-black/70 hover:text-black rounded-full hover:bg-black/5 transition-all duration-200"
             aria-label="Sign in"
           >
