@@ -1,4 +1,6 @@
 import { Anek_Latin, Poppins } from 'next/font/google';
+import { CartProvider } from "../context/CartContext";
+import CartDrawer from "../components/CartDrawer";
 import '../styles/globals.css';
 
 // Initialize the fonts
@@ -17,7 +19,10 @@ function MyApp({ Component, pageProps }) {
   return (
     // Apply the font variables to a wrapper div
     <main className={`${anek.variable} ${poppins.variable} font-sans`}>
-      <Component {...pageProps} />
+      <CartProvider>
+        <Component {...pageProps} />
+        <CartDrawer />
+      </CartProvider>
     </main>
   );
 }

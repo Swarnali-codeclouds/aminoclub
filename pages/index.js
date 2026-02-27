@@ -1,4 +1,5 @@
 import Navbar from "../components/Navbar";
+import MobileMenu from "@/components/MobileMenu";
 import Hero from "../components/Hero";
 import Guarantee from "../components/Guarantee";
 import UnlockAccess from "../components/UnlockAccess";
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
+      
       <Hero />
       <Guarantee />
       <UnlockAccess />

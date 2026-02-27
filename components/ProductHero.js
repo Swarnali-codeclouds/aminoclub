@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useState, useRef, useEffect } from "react";
 import PaymentMethods from "./PaymentMethods";
+import AddToCartButton from "./AddToCartButton";
 
 export default function ProductHero({ product }) {
   const [quantity, setQuantity] = useState(1);
@@ -219,25 +220,12 @@ const finalPrice = calculatePrice();
             </button>
 
             {/* Add to Cart */}
-            <button
-              type="button"
-              className="flex-1 h-12 px-6 rounded-full text-sm font-medium transition-all inline-flex items-center justify-center gap-2 bg-black text-white hover:bg-black/90"
-            >
-              <span>Add to cart</span>
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
-                />
-              </svg>
-            </button>
+           <AddToCartButton
+              product={product}
+              selectedVariant={selectedVariant}
+              selectedBundle={selectedBundle}
+              quantity={quantity}
+            />
           </div>
           {/* Shipping & Trust Info */}
           <div className="flex justify-between items-start gap-2 mt-3 py-3 px-3 bg-[#f8f8f8] rounded-xl text-[#555]">
