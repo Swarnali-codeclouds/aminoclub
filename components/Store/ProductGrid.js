@@ -23,14 +23,12 @@ export default function ProductGrid({
           <li className="h-full">
             <ProductCard 
               product={product} 
-              // Priority: 1. Individual product ctaText, 2. Grid-level buttonText
               buttonText={product.ctaText || buttonText} 
               basePath={basePath}
               icon={Icon && (() => <Icon className="mr-2" />)}
             />
           </li>
 
-          {/* Inject AccessCard after the 7th product (index 6) */}
           {showAccessCard && index === 6 && (
             <li className="col-span-full my-4">
               <AccessCard />
@@ -39,7 +37,6 @@ export default function ProductGrid({
         </React.Fragment>
       ))}
 
-      {/* Fallback for short lists (Only if it hasn't been shown yet) */}
       {showAccessCard && products.length <= 6 && (
         <li className="col-span-full">
           <AccessCard />
