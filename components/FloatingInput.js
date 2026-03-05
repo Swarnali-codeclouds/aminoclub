@@ -12,6 +12,7 @@ export default function FloatingInput({
   setShowPassword,
 }) {
   const id = useId(); // unique ID for accessibility
+
   return (
     <div className="relative w-full">
       <input
@@ -24,11 +25,14 @@ export default function FloatingInput({
         placeholder=" "
         className="peer w-full h-14 px-4 pt-5 pb-0 bg-white border border-[#e8e8e8] rounded-xl text-black text-base appearance-none focus:outline-none focus:ring-2 focus:ring-black/20 focus:border-black transition-all"
       />
-      <label
+
+     <label
         htmlFor={id}
-        className={`absolute left-4 transition-all duration-300
-          ${value ? "-top-1.5 text-sm bg-white px-2" : "top-1/2 -translate-y-1/2 text-sm"} 
-          peer-focus:-top-0.5 peer-focus:text-xs peer-focus:text-black pointer-events-none z-10`}
+        className={`absolute left-4 text-[#666] transition-all duration-300
+          ${value
+            ? "top-2 -translate-y-0.5 text-sm text-black"
+            : "top-1/2 -translate-y-1/2 text-sm peer-focus:top-2 peer-focus:-translate-y-0.5 peer-focus:text-xs "}
+          pointer-events-none`}
       >
         {label}
         {required && <span className="text-rose-500 ml-0.5">*</span>}
@@ -53,7 +57,13 @@ export default function FloatingInput({
             </svg>
           ) : (
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M1 1l18 18M1 19L19 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              <path
+                d="M1 1l18 18M1 19L19 1"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           )}
         </button>

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
-import FloatingInput from "@/components/FloatingInput"; // Make sure path is correct
+import FloatingInput from "@/components/FloatingInput"; 
 import Link from "next/link";
 
 export default function CheckoutPage() {
@@ -22,6 +22,9 @@ export default function CheckoutPage() {
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
   const [pin, setPin] = useState("");
+
+  // Discount code
+  const [discountCode, setDiscountCode] = useState("");
 
   // Check if user is logged in
   useEffect(() => {
@@ -53,7 +56,6 @@ export default function CheckoutPage() {
 
         {/* LEFT SIDE: CART SUMMARY */}
         <div className="bg-gray-50 p-8 space-y-6">
-          <h2 className="font-semibold text-lg mb-3">Cart</h2>
           {cartItems.length === 0 ? (
             <p className="text-gray-500">Your cart is empty</p>
           ) : (
@@ -79,7 +81,11 @@ export default function CheckoutPage() {
 
           {/* Discount */}
           <div className="flex gap-2 mb-6">
-            <FloatingInput placeholder="Discount code" value="" onChange={() => {}} />
+            <FloatingInput
+              label="Discount code"
+              value={discountCode}
+              onChange={(e) => setDiscountCode(e.target.value)}
+            />
             <button className="border px-4 rounded-md">Apply</button>
           </div>
 
@@ -108,11 +114,13 @@ export default function CheckoutPage() {
             label="Email or mobile phone number"
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
+            required
           />
 
           {/* Delivery */}
           <div className="space-y-3">
             <h2 className="font-semibold text-lg">Delivery</h2>
+
             <select className="w-full border rounded-md px-4 py-3">
               <option>India</option>
               <option>USA</option>
@@ -122,46 +130,16 @@ export default function CheckoutPage() {
             </select>
 
             <div className="grid grid-cols-2 gap-3">
-              <FloatingInput
-                label="First Name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-              />
-              <FloatingInput
-                label="Last Name"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                required
-              />
+              <FloatingInput label="First Name" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
+              <FloatingInput label="Last Name" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
             </div>
 
-            <FloatingInput
-              label="Address"
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
-            />
+            <FloatingInput label="Address" value={address} onChange={(e) => setAddress(e.target.value)} required />
 
             <div className="grid grid-cols-3 gap-3">
-              <FloatingInput
-                label="City"
-                value={city}
-                onChange={(e) => setCity(e.target.value)}
-                required
-              />
-              <FloatingInput
-                label="State"
-                value={state}
-                onChange={(e) => setState(e.target.value)}
-                required
-              />
-              <FloatingInput
-                label="PIN Code"
-                value={pin}
-                onChange={(e) => setPin(e.target.value)}
-                required
-              />
+              <FloatingInput label="City" value={city} onChange={(e) => setCity(e.target.value)} required />
+              <FloatingInput label="State" value={state} onChange={(e) => setState(e.target.value)} required />
+              <FloatingInput label="PIN Code" value={pin} onChange={(e) => setPin(e.target.value)} required />
             </div>
           </div>
 
@@ -172,7 +150,7 @@ export default function CheckoutPage() {
             {/* Credit Card Option */}
             <label
               className={`flex items-center gap-3 cursor-pointer border p-3 rounded-md
-                ${paymentMethod === "card" ? "border-orange-500 bg-orange-50" : "border-gray-300"}`}
+                ${paymentMethod === "card" ? "border-black bg-black/5" : "border-gray-300"}`}
             >
               <input
                 type="radio"
@@ -183,9 +161,9 @@ export default function CheckoutPage() {
                 className="hidden"
               />
               <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center
-                ${paymentMethod === "card" ? "border-orange-500" : "border-gray-400"}`}>
+                  ${paymentMethod === "card" ? "border-black" : "border-gray-400"}`}>
                 {paymentMethod === "card" && (
-                  <div className="w-2.5 h-2.5 bg-orange-500 rounded-full"></div>
+                  <div className="w-2.5 h-2.5 bg-black rounded-full"></div>
                 )}
               </div>
               <span className="font-medium">Credit Card</span>
@@ -194,35 +172,19 @@ export default function CheckoutPage() {
             {/* Credit Card Info Box */}
             {paymentMethod === "card" && (
               <div className="p-4 mt-3 border rounded-md bg-gray-50 space-y-3 transition-all duration-300">
-                <FloatingInput
-                  label="Card Number"
-                  value=""
-                  onChange={() => {}}
-                />
+                <FloatingInput label="Card Number" value="" onChange={() => {}} required />
                 <div className="grid grid-cols-2 gap-3">
-                  <FloatingInput
-                    label="Expiration Date (MM/YY)"
-                    value=""
-                    onChange={() => {}}
-                  />
-                  <FloatingInput
-                    label="Security Code"
-                    value=""
-                    onChange={() => {}}
-                  />
+                  <FloatingInput label="Expiration Date (MM/YY)" value="" onChange={() => {}} required />
+                  <FloatingInput label="Security Code" value="" onChange={() => {}} required />
                 </div>
-                <FloatingInput
-                  label="Name on Card"
-                  value=""
-                  onChange={() => {}}
-                />
+                <FloatingInput label="Name on Card" value="" onChange={() => {}} required />
               </div>
             )}
 
             {/* COD Option */}
             <label
               className={`flex items-center gap-3 cursor-pointer border p-3 rounded-md
-                ${paymentMethod === "cod" ? "border-orange-500 bg-orange-50" : "border-gray-300"}`}
+                ${paymentMethod === "cod" ? "border-black bg-black/5" : "border-gray-300"}`}
             >
               <input
                 type="radio"
@@ -233,9 +195,9 @@ export default function CheckoutPage() {
                 className="hidden"
               />
               <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center
-                ${paymentMethod === "cod" ? "border-orange-500" : "border-gray-400"}`}>
+                  ${paymentMethod === "cod" ? "border-black" : "border-gray-400"}`}>
                 {paymentMethod === "cod" && (
-                  <div className="w-2.5 h-2.5 bg-orange-500 rounded-full"></div>
+                  <div className="w-2.5 h-2.5 bg-black rounded-full"></div>
                 )}
               </div>
               <span className="font-medium">Cash on Delivery</span>
@@ -243,7 +205,7 @@ export default function CheckoutPage() {
           </div>
 
           {/* Pay Button */}
-          <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-md">
+          <button className="w-full bg-black hover:bg-black/80 text-white font-semibold py-3 rounded-md">
             Pay now
           </button>
 
