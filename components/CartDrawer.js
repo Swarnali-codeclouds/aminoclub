@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCart } from "../context/CartContext";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import Link from "next/link";
 import QuantityDropdown from "./QuantityDropdown";
 
 export default function CartDrawer() {
@@ -230,10 +231,11 @@ export default function CartDrawer() {
                     </div>
                   </div>
                 </div>
-
-                <button className="w-full h-12 bg-black text-white rounded-full font-medium">
-                  Proceed to Checkout →
-                </button>
+<Link href="/checkout">
+  <button className="w-full h-12 bg-black text-white rounded-full font-medium">
+    Proceed to Checkout →
+  </button>
+</Link>
               </div>
             </>
           )}
