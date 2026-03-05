@@ -14,7 +14,7 @@ export default function ProductGrid({
   showAccessCard = false, 
   buttonText = "View", 
   basePath = "store",
-  icon: IconProp // Rename to start with a Capital letter so React can render it
+  icon: Icon = null
 }) {
   return (
     <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
@@ -26,7 +26,7 @@ export default function ProductGrid({
               // Priority: 1. Individual product ctaText, 2. Grid-level buttonText
               buttonText={product.ctaText || buttonText} 
               basePath={basePath}
-              icon={IconProp} // Pass the component down
+              icon={Icon && (() => <Icon className="mr-2" />)}
             />
           </li>
 

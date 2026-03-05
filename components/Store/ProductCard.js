@@ -5,7 +5,7 @@ export default function ProductCard({
   product, 
   buttonText = "View", // Default text
   basePath = "store",    // Default path base
-  icon: IconProp
+  icon: Icon = null
 }) {
   const {
     slug,
@@ -86,7 +86,9 @@ export default function ProductCard({
                 href={fullPath}
                 className="w-full h-10 lg:h-11 rounded-full bg-black text-white font-medium text-xs lg:text-sm flex items-center justify-center hover:bg-gray-800 transition-all active:scale-[0.98]"
               >
+                {Icon && <Icon className="mr-2" />}
                 {buttonText}
+
               </Link>
             </div>
 

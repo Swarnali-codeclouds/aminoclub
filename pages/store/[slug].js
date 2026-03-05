@@ -29,7 +29,6 @@ export default function ProductPage() {
   return (
     <>
       <ProductHero product={product} />
-
       <TrustBadges />
       <COASection />
       <ProductDetails />
