@@ -236,9 +236,8 @@ export default function DashboardPage() {
         {activeSection === "addresses" && <AddressesPage />}
 
         {activeSection === "partner" && <AffiliatePage />}
-      </div>
         {activeSection === "overview" && (
-          <div className="bg-gray-50 rounded-2xl border border-gray-200 shadow-sm overflow-hidden max-w-4xl mx-auto">
+          <div className="bg-gray-50 rounded-2xl border border-gray-200 shadow-sm overflow-hidden max-w-4xl mx-auto mb-8">
             {/* Orders Section */}
             <div className="p-6 border-b border-gray-100 flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center">
@@ -304,6 +303,7 @@ export default function DashboardPage() {
             )}
           </div>
         )}
+      </div>
       </div>
   );
 }

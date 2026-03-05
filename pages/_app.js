@@ -1,5 +1,6 @@
 import { Anek_Latin, Poppins } from "next/font/google";
 import { useRouter } from "next/router";
+import { AuthProvider } from "../context/AuthContext";
 import { CartProvider } from "../context/CartContext";
 import CartDrawer from "../components/CartDrawer";
 import Navbar from "../components/Navbar";
@@ -22,28 +23,22 @@ const poppins = Poppins({
 /* ---------------- App ---------------- */
 
 export default function MyApp({ Component, pageProps }) {
-  const router = useRouter();
-
-  /**
-   * Hide Navbar on auth-related pages
-   * Add more routes here if needed
-   */
-  const hideNavbar =
-    router.pathname === "/login" ||
-    router.pathname === "/signup" ||
-    router.pathname.startsWith("/account");
+  // We removed the 'hideNavbar' logic entirely to keep it visible everywhere
 
   return (
     <main className={`${anek.variable} ${poppins.variable} font-sans`}>
-      <CartProvider>
-        <Navbar />
+      <AuthProvider>
+        <CartProvider>
+          {/* Navbar is now outside any conditional checks */}
+          <Navbar />
 
-        {/* Page Content */}
-        <Component {...pageProps} />
+          {/* Page Content */}
+          <Component {...pageProps} />
 
-        {/* ✅ Global Cart Drawer */}
-        <CartDrawer />
-      </CartProvider>
+          {/* ✅ Global Cart Drawer */}
+          <CartDrawer />
+        </CartProvider>
+      </AuthProvider>
       <Footer />
     </main>
   );

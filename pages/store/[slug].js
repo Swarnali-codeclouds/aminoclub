@@ -4,12 +4,7 @@ import ProductHero from "../../components/ProductHero";
 import TrustBadges from "../../components/TrustBadges";
 import ResearchStats from "../../components/ResearchStats";
 import COASection from "../../components/COASection";
-import MechanismSection from "../../components/MechanismSection";
-import ResearchInsights from "../../components/ResearchInsights";
-import BeyondRejuvenation from "../../components/BeyondRejuvenation";
-import CompoundInformation from "../../components/CompoundInformation";
 import FinalCTA from "../../components/FinalCTA";
-import SafetyProfileSection from "../../components/SafetyProfileSection";
 import ResearchFAQ from "../../components/ResearchFAQ";
 import SourcesReferences from "@/components/SourcesReferences";
 import ResearchNotice from "@/components/ResearchNotice";
@@ -37,14 +32,7 @@ export default function ProductPage() {
 
       <TrustBadges />
       <COASection />
-      <ResearchStats />
-      {/* <MechanismSection /> */}
-
-      <ProductDetails/>
-    
-      <BeyondRejuvenation />
-      <SafetyProfileSection />
-      <CompoundInformation />
+      <ProductDetails />
       <ResearchFAQ />
       <SourcesReferences />
       <ResearchNotice />

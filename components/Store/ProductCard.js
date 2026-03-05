@@ -4,7 +4,8 @@ import Image from "next/image";
 export default function ProductCard({ 
   product, 
   buttonText = "View", // Default text
-  basePath = "store"    // Default path base
+  basePath = "store",    // Default path base
+  icon: IconProp
 }) {
   const {
     slug,
@@ -33,7 +34,7 @@ export default function ProductCard({
               alt={name}
               fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-500 group-hover:scale-105 object-right"
             />
           </Link>
 
