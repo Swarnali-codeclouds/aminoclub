@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* ===============================
+   THEME & FONT VARIABLES
+================================ */
 
 @theme {
   --font-anek: var(--font-anek);
@@ -14,10 +17,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
+/* Dark mode support */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -25,44 +27,39 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-16px); }
-  100% { transform: translateY(0px); }
+/* ===============================
+   BASE STYLES
+================================ */
+
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-anek);
+    line-height: 1.75;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-anek);
+    line-height: 1.3;
+  }
+
+  /* Remove default focus styles */
+  input:focus,
+  input:focus-visible,
+  select:focus,
+  select:focus-visible,
+  textarea:focus,
+  textarea:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }
 
-@keyframes floatSlow {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
-}
+/* ===============================
+   UTILITIES
+================================ */
 
-@keyframes floatDelayed {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-14px); }
-  100% { transform: translateY(0px); }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-slow {
-  animation: floatSlow 8s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: floatDelayed 7s ease-in-out infinite;
-  animation-delay: 1.2s;
-}
-.content-container {
-  @apply mx-auto max-w-7xl px-2 sm:px-2 lg:px-2;
-}
 @layer utilities {
   .content-container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
@@ -75,18 +72,22 @@ body {
   .font-poppins {
     font-family: var(--font-poppins);
   }
-}
-@layer base {
-  body {
-    font-family: var(--font-anek);
-    line-height: 1.75;
+
+  /* Scrollbar hide */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-anek);
-    line-height: 1.3;
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
+
+/* ===============================
+   COMPONENT STYLES
+================================ */
+
 @layer components {
   .btn {
     font-family: var(--font-poppins);
@@ -94,33 +95,76 @@ body {
     line-height: 1;
     letter-spacing: 0.02em;
   }
-  .heading{
+
+  .heading {
     font-family: var(--font-anek);
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: 0.02em;
   }
-  .paragraph{
+
+  .paragraph {
     font-family: var(--font-anek);
     font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.02em;
   }
 }
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+
+/* ===============================
+   FLOATING ANIMATIONS (AUTH VISUAL)
+================================ */
+@keyframes floatSway {
+  0% { transform: translateY(0) }
+  50% { transform: translateY(-14px) }
+  100% { transform: translateY(0) }
 }
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+
+@keyframes floatRotate {
+  0% { transform: translateY(0) rotate(0deg) }
+  50% { transform: translateY(-18px) rotate(3deg) }
+  100% { transform: translateY(0) rotate(0deg) }
 }
-/* Remove focus styles from inputs & selects */
-input:focus,
-input:focus-visible,
-select:focus,
-select:focus-visible,
-textarea:focus,
-textarea:focus-visible {
-  outline: none !important;
-  box-shadow: none !important;
+
+@keyframes floatPulse {
+  0% { transform: scale(1) translateY(0) }
+  50% { transform: scale(1.04) translateY(-12px) }
+  100% { transform: scale(1) translateY(0) }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0) }
+  50% { transform: translateY(-10px) }
+}
+
+.animate-float-sway {
+  animation: floatSway 8s ease-in-out infinite;
+}
+
+.animate-float-rotate {
+  animation: floatRotate 10s ease-in-out infinite;
+}
+
+.animate-float-pulse {
+  animation: floatPulse 7s ease-in-out infinite;
+}
+
+.animate-bob {
+  animation: bob 6s ease-in-out infinite;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-sway,
+  .animate-float-rotate,
+  .animate-float-pulse,
+  .animate-bob {
+    animation: none;
+  }
+}
+/* globals.css or your main CSS file */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+  -webkit-text-fill-color: #000 !important;
+  transition: background-color 5000s ease-in-out 0s;
 }

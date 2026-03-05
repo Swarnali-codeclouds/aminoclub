@@ -59,7 +59,7 @@ export default function Hero() {
                               right-[25%] sm:right-[20%] lg:right-[35%] xl:right-[42%]
                               top-[15%] lg:top-[12%]
                               w-[28%] sm:w-[28%] lg:w-[35%] xl:w-[32%]">
-                <div className="w-full h-full animate-float-slow">
+                <div className="w-full h-full animate-float-pulse">
                   <Image
                     src="/images/bottle-small-2.webp"
                     alt="TB-500 vial"
@@ -77,7 +77,7 @@ export default function Hero() {
                            w-[60%] sm:w-[60%] lg:w-[80%] xl:w-[75%]"
                 style={{ transform: "rotate(-12deg)" }}
               >
-                <div className="w-full h-full animate-float">
+                <div className="w-full h-full animate-bob">
                   <Image
                     src="/images/bottle-big.webp"
                     alt="Bacteriostatic Water"
@@ -93,7 +93,7 @@ export default function Hero() {
                               right-[16%] sm:right-[18%] lg:right-[12%] xl:right-[20%]
                               top-[38%] sm:top-[40%] lg:top-[35%]
                               w-[32%] sm:w-[30%] lg:w-[38%] xl:w-[35%]">
-                <div className="w-full h-full animate-float-delayed">
+                <div className="w-full h-full animate-bob">
                   <Image
                     src="/images/bottle-small-1.webp"
                     alt="BPC-157 vial"

@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import StoreHeader from "../components/Store/StoreHeader";
 import StoreFilters from "../components/Store/StoreFilters";
 import ProductGrid from "../components/Store/ProductGrid";
@@ -50,8 +48,6 @@ export default function StorePage() {
 
   return (
     <>
-      <Navbar />
-
       <div className="py-8 lg:py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <StoreHeader
@@ -69,8 +65,6 @@ export default function StorePage() {
           <ProductGrid products={filteredProducts} />
         </div>
       </div>
-
-      <Footer />
     </>
   );
 }

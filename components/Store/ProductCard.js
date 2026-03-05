@@ -1,7 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ 
+  product, 
+  buttonText = "View", // Default text
+  basePath = "store"    // Default path base
+}) {
   const {
     slug,
     name,
@@ -12,14 +16,16 @@ export default function ProductCard({ product }) {
     reviews,
   } = product;
 
+  const fullPath = `/${basePath}/${slug}`;
+
   return (
-    <div className="h-full">
+    <div className="h-full font-anek">
       <div className="group h-full">
-        <div className="bg-neutral-100 rounded-[20px] lg:rounded-[24px] overflow-hidden h-full flex flex-col">
+        <div className="bg-neutral-100 rounded-[20px] lg:rounded-[24px] overflow-hidden h-full flex flex-col border border-transparent hover:border-gray-200 transition-all">
 
           {/* Image */}
           <Link
-            href={`/store/${slug}`}
+            href={fullPath}
             className="block relative aspect-[4/5] overflow-hidden"
           >
             <Image
@@ -27,7 +33,7 @@ export default function ProductCard({ product }) {
               alt={name}
               fill
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="object-cover object-[80%_center] transition-transform duration-300 group-hover:scale-105"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
           </Link>
 
@@ -35,21 +41,21 @@ export default function ProductCard({ product }) {
           <div className="p-3 lg:p-4 flex flex-col flex-grow bg-[#f9f9f9] rounded-b-[20px] lg:rounded-b-[24px]">
 
             {/* Title + Price */}
-            <div className="flex items-center justify-between gap-2 mb-1">
+            <div className="flex items-start justify-between gap-2 mb-1">
               <Link
-                href={`/store/${slug}`}
+                href={fullPath}
                 className="hover:opacity-80 transition-opacity flex-1 min-w-0"
               >
-                <h3 className="heading font-semibold text-base lg:text-lg leading-tight line-clamp-2">
+                <h3 className="font-semibold text-base lg:text-lg leading-tight line-clamp-2 text-black">
                   {name}
                 </h3>
               </Link>
 
-              <div className="flex-shrink-0 text-left">
-                <span className="text-gray-500 text-[10px] lg:text-xs block">
+              <div className="flex-shrink-0 text-right">
+                <span className="text-gray-500 text-[10px] lg:text-xs block leading-none">
                   From
                 </span>
-                <span className="font-semibold text-lg lg:text-xl leading-tight">
+                <span className="font-bold text-lg lg:text-xl leading-tight text-black">
                   ${price}
                 </span>
               </div>
@@ -61,28 +67,25 @@ export default function ProductCard({ product }) {
             </p>
 
             {/* Rating */}
-            <div className="mb-2 lg:mb-3">
+            <div className="mb-3">
               <div className="inline-flex items-center gap-1.5">
-                <div className="flex items-center gap-0.5">
-                  {[...Array(4)].map((_, i) => (
-                    <Star key={i} />
-                  ))}
+                <div className="flex items-center gap-0.5 text-yellow-400">
+                  {[...Array(4)].map((_, i) => <Star key={i} />)}
                   <HalfStar />
                 </div>
-                <span className="text-xs text-gray-500 leading-none">
+                <span className="text-[11px] lg:text-xs text-gray-400 font-medium">
                   {rating} ({reviews})
                 </span>
               </div>
             </div>
 
-            {/* CTA */}
+            {/* CTA Button - Now Dynamic */}
             <div className="mt-auto">
               <Link
-                href={`/store/${slug}`}
-                aria-label={`View ${name}`}
-                className="w-full h-9 lg:h-10 rounded-full bg-black text-white font-medium text-xs lg:text-sm flex items-center justify-center hover:bg-gray-800 transition"
+                href={fullPath}
+                className="w-full h-10 lg:h-11 rounded-full bg-black text-white font-medium text-xs lg:text-sm flex items-center justify-center hover:bg-gray-800 transition-all active:scale-[0.98]"
               >
-                View
+                {buttonText}
               </Link>
             </div>
 
@@ -92,6 +95,8 @@ export default function ProductCard({ product }) {
     </div>
   );
 }
+
+// ... Star and HalfStar functions remain the same
 function Star() {
   return (
     <svg

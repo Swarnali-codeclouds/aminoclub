@@ -1,4 +1,4 @@
-import Navbar from "../components/Navbar";
+
 import Hero from "../components/Hero";
 import Guarantee from "../components/Guarantee";
 import UnlockAccess from "../components/UnlockAccess";
@@ -7,13 +7,11 @@ import Quality from "../components/Quality";
 import WhyChoose from "../components/WhyChoose";
 import FAQ from "../components/FAQ";
 import FinalCTA from "../components/FinalCTA";
-import Footer from "../components/Footer";
+
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
-      
+    <>      
       <Hero />
       <Guarantee />
       <UnlockAccess />
@@ -22,7 +20,6 @@ export default function Home() {
       <WhyChoose />
       <FAQ />
       <FinalCTA />
-      <Footer />
     </>
   );
 

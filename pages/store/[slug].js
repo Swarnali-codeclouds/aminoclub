@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import products from "../../data/products";
-import Navbar from "../../components/Navbar";
 import ProductHero from "../../components/ProductHero";
 import TrustBadges from "../../components/TrustBadges";
 import ResearchStats from "../../components/ResearchStats";
@@ -10,7 +9,6 @@ import ResearchInsights from "../../components/ResearchInsights";
 import BeyondRejuvenation from "../../components/BeyondRejuvenation";
 import CompoundInformation from "../../components/CompoundInformation";
 import FinalCTA from "../../components/FinalCTA";
-import Footer from "../../components/Footer";
 import SafetyProfileSection from "../../components/SafetyProfileSection";
 import ResearchFAQ from "../../components/ResearchFAQ";
 import SourcesReferences from "@/components/SourcesReferences";
@@ -30,7 +28,6 @@ export default function ProductPage() {
 
   return (
     <>
-      <Navbar />
       <ProductHero product={product} />
       <TrustBadges />
         <COASection />
@@ -44,7 +41,6 @@ export default function ProductPage() {
         <SourcesReferences />
         <ResearchNotice />
       <FinalCTA />
-      <Footer />
     </>
   );
 }
