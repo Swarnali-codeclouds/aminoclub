@@ -145,7 +145,7 @@ export default function ProductDetails() {
               </p>
 
               {/* Pathways */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center mb-6">
+              <div className="flex flex-row sm:flex-row gap-6 justify-center mb-6">
                 {/* Gene Expression */}
                 <div className="text-center flex-1 max-w-[180px]">
                   <div

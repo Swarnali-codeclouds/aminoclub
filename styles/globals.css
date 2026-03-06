@@ -199,3 +199,12 @@ input:-webkit-autofill {
 .animate-sparkle-3 {
     animation: 2.2s ease-out 2.4s infinite float-sparkle;
 }
+
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+  a{
+    @apply cursor-pointer
+  }
+}
