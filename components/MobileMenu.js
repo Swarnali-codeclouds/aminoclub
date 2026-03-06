@@ -6,7 +6,7 @@ export default function MobileMenu({ open, onClose }) {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-[60] lg:hidden">
+    <div className="fixed inset-0 z-[60] lg:hidden font-anek">
       {/* Overlay */}
       <div
         className="absolute inset-0 bg-black/30 backdrop-blur-sm"

@@ -21,7 +21,7 @@ export default function Features() {
         <p className="text-sm lg:text-base mb-4 max-w-[70%]">
           Every purchase unlocks access to our private Discord community. Connect with fellow peptide enthusiasts, share insights, and get real-time support.
         </p>
-        <a href="/us/store" className="inline-block">
+        <a href="/store" className="inline-block">
           <button className="font-poppins border border-black text-black text-sm lg:text-base font-medium px-5 lg:px-6 h-10 lg:h-11 rounded-full hover:bg-black hover:text-white transition">
             Shop & Join Community
           </button>
@@ -41,7 +41,7 @@ export default function Features() {
         <p className="text-sm lg:text-base mb-4 max-w-[70%]">
           GMP-compliant sourcing with rigorous third-party testing—ensuring the highest purity peptides remain accessible.
         </p>
-        <a href="/us/store" className="inline-block">
+        <a href="/store" className="inline-block">
           <button className="font-poppins border border-black text-black text-sm lg:text-base font-medium px-5 lg:px-6 h-10 lg:h-11 rounded-full hover:bg-black hover:text-white transition">
             Shop USA Tested Peptides
           </button>
@@ -73,7 +73,7 @@ export default function Features() {
         <p className="text-sm lg:text-base mb-4 max-w-[70%]">
           Access research articles, studies, and educational resources updated regularly.
         </p>
-        <a href="/us/research">
+        <a href="/research">
           <button className="font-poppins border border-black text-black text-sm lg:text-base font-medium px-5 lg:px-6 h-10 lg:h-11 rounded-full hover:bg-black hover:text-white transition">
             Explore Research Library
           </button>
@@ -116,7 +116,7 @@ overflow-hidden">
 
   {/* Right CTA */}
   <div className="font-anek relative z-20 shrink-0">
-    <a href="/us/returns">
+    <a href="/returns">
       <button className="btn border border-black text-black text-sm lg:text-base font-medium
         px-6 lg:px-8 h-11 lg:h-12 rounded-full
         hover:bg-black hover:text-white transition-all bg-white">
