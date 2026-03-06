@@ -168,3 +168,34 @@ input:-webkit-autofill {
   -webkit-text-fill-color: #000 !important;
   transition: background-color 5000s ease-in-out 0s;
 }
+@keyframes text-glow {
+ 0%, 100% {
+    text-shadow: 0 0 #0000;
+}
+50% {
+    text-shadow: 0 0 20px #7bc88a66;
+}
+}
+.animate-text-glow {
+    animation: 3s ease-in-out 1.5s infinite text-glow;
+}
+
+@keyframes float-sparkle {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+}
+20% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1);
+}
+
+100% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0);
+}
+  
+}
+.animate-sparkle-3 {
+    animation: 2.2s ease-out 2.4s infinite float-sparkle;
+}

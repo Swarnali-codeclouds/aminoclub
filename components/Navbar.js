@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
-import { useAuth } from "@/context/AuthContext"; // Import your new Auth hook
+import { useAuth } from "@/context/AuthContext"; 
+import MobileMenu from "@/components/MobileMenu";// Import your new Auth hook
 
 export default function Header() {
   const { cartItems, setCartOpen } = useCart();
@@ -106,6 +107,7 @@ export default function Header() {
           </div>
         </nav>
       </header>
+       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
   );
 }
