@@ -53,6 +53,7 @@
   }
   svg {
     fill: var(--textcolor);
+    stroke: var(--foreground);
   }
   /* Remove default focus styles */
   input:focus,
