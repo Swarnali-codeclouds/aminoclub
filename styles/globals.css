@@ -39,7 +39,12 @@
     line-height: 1.75;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-anek);
     line-height: 1.3;
   }
@@ -115,26 +120,49 @@
    FLOATING ANIMATIONS (AUTH VISUAL)
 ================================ */
 @keyframes floatSway {
-  0% { transform: translateY(0) }
-  50% { transform: translateY(-14px) }
-  100% { transform: translateY(0) }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes floatRotate {
-  0% { transform: translateY(0) rotate(0deg) }
-  50% { transform: translateY(-18px) rotate(3deg) }
-  100% { transform: translateY(0) rotate(0deg) }
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
 }
 
 @keyframes floatPulse {
-  0% { transform: scale(1) translateY(0) }
-  50% { transform: scale(1.04) translateY(-12px) }
-  100% { transform: scale(1) translateY(0) }
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.04) translateY(-12px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
 }
 
 @keyframes bob {
-  0%, 100% { transform: translateY(0) }
-  50% { transform: translateY(-10px) }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .animate-float-sway {
@@ -169,42 +197,52 @@ input:-webkit-autofill {
   transition: background-color 5000s ease-in-out 0s;
 }
 @keyframes text-glow {
- 0%, 100% {
+  0%,
+  100% {
     text-shadow: 0 0 #0000;
-}
-50% {
+  }
+  50% {
     text-shadow: 0 0 20px #7bc88a66;
-}
+  }
 }
 .animate-text-glow {
-    animation: 3s ease-in-out 1.5s infinite text-glow;
+  animation: 3s ease-in-out 1.5s infinite text-glow;
 }
 
 @keyframes float-sparkle {
   0% {
     opacity: 0;
     transform: translateY(0) scale(0);
-}
-20% {
+  }
+  20% {
     opacity: 1;
     transform: translateY(-5px) scale(1);
-}
+  }
 
-100% {
+  100% {
     opacity: 0;
     transform: translateY(-20px) scale(0);
-}
-  
+  }
 }
 .animate-sparkle-3 {
-    animation: 2.2s ease-out 2.4s infinite float-sparkle;
+  animation: 2.2s ease-out 2.4s infinite float-sparkle;
 }
 
 @layer base {
   button {
     @apply cursor-pointer;
   }
-  a{
-    @apply cursor-pointer
+  a {
+    @apply cursor-pointer;
+  }
+}
+@media screen (min-width: 767px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-foreground);
   }
 }
